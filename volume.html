@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volume & Other Tools — ChartIQ Learn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body><nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <span class="nlm">Chart<span>IQ</span></span>
+    <span class="nls">Learn</span>
+  </a>
+  <div class="nav-mid">
+    <a href="index.html" class="nl">Home</a>
+    <div class="nav-dd-wrap" id="navIndicators">
+      <a href="indicators.html" class="nl  has-dd">Indicators <span class="nl-arr">▾</span></a>
+      <div class="mega-dropdown" id="megaDropdown">
+        <div class="mega-inner">
+          <div class="mega-intro">
+            <p class="mega-intro-title">All indicators</p>
+            <p class="mega-intro-sub">6 categories covering every major tool used in technical analysis.</p>
+            <a href="indicators.html" class="mega-all-link">View all →</a>
+          </div>
+          <div class="mega-cats">
+            <a href="trend.html" class="mega-cat "><span class="mc-icon">📈</span><div><strong>Trend &amp; Moving Averages</strong><span>SMA, EMA, Heikin Ashi, Gann</span></div></a>
+            <a href="momentum.html" class="mega-cat "><span class="mc-icon">⚡</span><div><strong>Momentum &amp; Oscillators</strong><span>RSI, MACD, Stochastic, Divergence</span></div></a>
+            <a href="volatility.html" class="mega-cat "><span class="mc-icon">🕯️</span><div><strong>Volatility &amp; Patterns</strong><span>Bollinger, Elliott Wave, Renko, Harmonic</span></div></a>
+            <a href="structure.html" class="mega-cat "><span class="mc-icon">🏗️</span><div><strong>Structure &amp; Levels</strong><span>S&amp;R, Supply/Demand, BOS, CHoCH</span></div></a>
+            <a href="priceaction.html" class="mega-cat "><span class="mc-icon">🎯</span><div><strong>Price Action &amp; Advanced</strong><span>Fibonacci, FVG, Breakout, Reversal</span></div></a>
+            <a href="volume.html" class="mega-cat act"><span class="mc-icon">📊</span><div><strong>Volume &amp; Other Tools</strong><span>Volume, Moon Phases, Seasonality</span></div></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-r">
+    <div class="tt">
+      <button class="tb on" id="btnDark" onclick="setTheme('dark')" title="Dark">🌙</button>
+      <button class="tb" id="btnLight" onclick="setTheme('light')" title="Light">☀️</button>
+    </div>
+    <a href="index.html" class="nc">← Home</a>
+  </div>
+</nav>
+<div class="page-hero">
+  <div class="cat-accent" style="background:#f97316"></div>
+  <div class="page-hero-inner">
+    <a href="indicators.html" class="ph-back">← All indicators</a>
+    <span class="ptag" style="background:rgba(249,115,22,0.08);border-color:#f9731630;color:#f97316">Category 6 · 3 indicators</span>
+    <h1>📊 Volume & Other Tools</h1>
+    <p>Volume confirms or denies every price move — it's the closest thing to seeing institutional activity. Plus two unconventional tools that appear in popular trading education.</p>
+  </div>
+</div>
+
+<div class="ind-grid" style="max-width:1172px;margin:0 auto">
+  <div class="ind-card reveal" onclick="openModal('volume')">
+    <div class="ind-card-bar" style="background:#f97316"></div>
+    <div class="ind-card-body">
+      <div class="ind-card-meta">
+        <span class="ind-type" style="background:rgba(249,115,22,.12);color:#f97316">Volume</span>
+        <span class="ind-diff">★☆☆ Easy</span>
+      </div>
+      <h3>Volume Analysis</h3>
+      <p class="ind-card-full">// The Confirmation Tool</p>
+      <p class="ind-card-desc">The number of units traded in a period. High volume = conviction. Low volume = suspicion. The best confirmation tool available.</p>
+      <div class="ind-signals"><span class="isig isig-buy">BUY</span><span class="isig isig-sell">SELL</span><span class="isig isig-trend">TREND</span></div>
+    </div>
+    <div class="ind-card-cta"><span>Learn Volume Analysis</span><span class="ind-cta-arr">→</span></div>
+  </div>
+  <div class="ind-card reveal" onclick="openModal('moon')">
+    <div class="ind-card-bar" style="background:#f97316"></div>
+    <div class="ind-card-body">
+      <div class="ind-card-meta">
+        <span class="ind-type" style="background:rgba(249,115,22,.12);color:#f97316">Alternative</span>
+        <span class="ind-diff">★★☆ Unconventional</span>
+      </div>
+      <h3>Moon Phases</h3>
+      <p class="ind-card-full">// Lunar Cycle Correlations</p>
+      <p class="ind-card-desc">Observed correlations between lunar cycles and market behaviour — not scientifically proven, but with a dedicated following.</p>
+      <div class="ind-signals"><span class="isig isig-buy">BUY</span><span class="isig isig-sell">SELL</span><span class="isig isig-hold">HOLD</span></div>
+    </div>
+    <div class="ind-card-cta"><span>Learn Moon Phases</span><span class="ind-cta-arr">→</span></div>
+  </div>
+  <div class="ind-card reveal" onclick="openModal('season')">
+    <div class="ind-card-bar" style="background:#f97316"></div>
+    <div class="ind-card-body">
+      <div class="ind-card-meta">
+        <span class="ind-type" style="background:rgba(249,115,22,.12);color:#f97316">Statistical</span>
+        <span class="ind-diff">★★☆ Intermediate</span>
+      </div>
+      <h3>Seasonality</h3>
+      <p class="ind-card-full">// Calendar-Based Market Tendencies</p>
+      <p class="ind-card-desc">Historical tendencies for markets to perform differently depending on the time of year — with reasonably solid statistical backing.</p>
+      <div class="ind-signals"><span class="isig isig-buy">BUY</span><span class="isig isig-sell">SELL</span><span class="isig isig-hold">HOLD</span></div>
+    </div>
+    <div class="ind-card-cta"><span>Learn Seasonality</span><span class="ind-cta-arr">→</span></div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="overlay" id="overlay" onclick="handleOvClick(event)">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="modal-head-bar" id="mHeadBar"></div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <span class="m-tag" id="mTag"></span>
+      <h2 id="mTitle"></h2>
+      <p class="m-full" id="mFull"></p>
+      <p class="m-intro" id="mIntro"></p>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<footer>
+  <span class="fb">ChartIQ Learn</span>
+  <span class="fn">⚠ Educational only — not financial advice</span>
+  <span class="fc">© 2025</span>
+</footer>
+
+<script>
+window.INDICATORS = {
+  'volume': {"title": "Volume Analysis", "full": "// The Confirmation Tool", "tag": "Volume · Easy", "tagBg": "rgba(249,115,22,.12)", "tagColor": "#f97316", "accentColor": "#f97316", "_chartType": "volume", "intro": "Volume is the number of units traded in a given period. It's the single best tool for confirming whether a price move is genuine. High volume = conviction. Low volume = suspicion.", "how": "The fundamental rule: price moving with high volume is significant; price moving with low volume should be questioned.\n\nBullish signs: rising prices with increasing volume, support levels holding with high-volume bounces. Bearish: prices falling on high volume, rallies occurring on declining volume (no conviction).\n\nVolume divergence is powerful: price makes a new high but volume is decreasing — buyers are running out of conviction.", "formula": "Volume spike: unusually high volume = significant event\nVolume divergence: price ↑ + volume ↓ = weakening move\nBreakout confirmation: high volume = genuine break\nSupport test: high-volume bounce = strong support level", "signals": [{"t": "buy", "l": "High volume rally", "d": "Price rising with expanding volume — buyers are committed. The uptrend has conviction and is likely to continue."}, {"t": "sell", "l": "High volume decline", "d": "Price falling with high volume — sellers are aggressive. Downtrend has conviction. Avoid buying against this."}, {"t": "trend", "l": "Volume divergence", "d": "Rising price with falling volume = danger. Buyers are losing momentum. Watch closely for a potential reversal."}], "tips": ["Volume is most powerful compared to average volume. 3× average on a breakout is very significant.", "Volume analysis is the closest thing to seeing institutional activity. Big players can't hide their volume footprint.", "On crypto exchanges, volume can be manipulated by wash trading. Always use reputable exchanges for reliable volume data."]},
+  'moon': {"title": "Moon Phases", "full": "// Lunar Cycle Correlations", "tag": "Alternative Tool", "tagBg": "rgba(249,115,22,.12)", "tagColor": "#f97316", "accentColor": "#f97316", "_chartType": "default", "intro": "Moon phase trading is a non-traditional approach based on observed correlations between lunar cycles and market behaviour. While not scientifically proven, it has a dedicated following among certain traders and educators.", "how": "Some traders observe correlations between full/new moons and market turning points. The theory: human psychology and risk appetite may be subtly influenced by lunar cycles, affecting collective trading behaviour.\n\nStudies show mixed, weak results at best. Most professional traders consider this anecdotal. We include it because it appears in popular trading education — but approach with healthy skepticism and critical thinking.", "formula": "New Moon: some observe bullish tendencies (roughly)\nFull Moon: some observe bearish tendencies (roughly)\nLunar cycle: ~29.5 days\nNote: statistical correlations are weak and inconsistent", "signals": [{"t": "buy", "l": "New Moon (theory)", "d": "Some traders observe bullish tendencies around the New Moon. Not a reliable standalone signal — treat as a curiosity only."}, {"t": "sell", "l": "Full Moon (theory)", "d": "Some traders observe bearish tendencies around the Full Moon. Extremely weak signal — approach with significant skepticism."}, {"t": "hold", "l": "No strong signal", "d": "Moon phase trading has no consistent scientific backing. We include it as it appears in popular trading content — but be skeptical."}], "tips": ["Treat Moon Phase trading as a curiosity, not a serious strategy. No professional firm uses lunar cycles systematically.", "If you're interested in cycles, time-based seasonality analysis has far stronger statistical backing than lunar phases.", "Understanding why these theories persist teaches you something valuable about trading psychology and pattern-seeking behaviour."]},
+  'season': {"title": "Seasonality", "full": "// Calendar-Based Market Tendencies", "tag": "Statistical Tool", "tagBg": "rgba(249,115,22,.12)", "tagColor": "#f97316", "accentColor": "#f97316", "_chartType": "default", "intro": "Seasonality studies historical tendencies for markets to perform differently depending on the time of year, month, or even day of week. Unlike Moon Phases, seasonality has reasonably solid statistical backing.", "how": "Well-documented seasonal patterns include: \"Sell in May and go away\" (stocks historically underperform May–October), the January Effect (small-caps often outperform in January), and the Q4 Bitcoin rally observed in several historical years.\n\nThese patterns form because of recurring real-world events: earnings seasons, fiscal year ends, tax-loss harvesting, institutional rebalancing, and retail investor behaviour around holidays.", "formula": "\"Sell in May\": Nov–Apr historically stronger for equities\nJanuary Effect: Jan often strong for small-cap stocks\nQ4 Crypto: Oct–Dec historically bullish for Bitcoin\nCaveat: past seasonality never guarantees future results", "signals": [{"t": "buy", "l": "Seasonal buy window", "d": "Entering positions in historically strong seasonal periods (Nov–Dec for crypto, Nov–Apr for equities) with confirmed uptrend."}, {"t": "sell", "l": "Seasonal caution", "d": "Reducing exposure during historically weak periods (Sep–Oct for stocks) when other indicators also show weakness."}, {"t": "hold", "l": "Conflicting signals", "d": "Seasonality contradicts other signals. Don't override clear technical setups purely based on calendar — use it only as a filter."}], "tips": ["Seasonality is a probabilistic tendency, not a certainty. Every year can deviate significantly from historical averages.", "The strongest use of seasonality is as a filter alongside conventional technical analysis, not as a standalone strategy.", "Seasonality in crypto is newer and less established than in equities — be cautious about over-fitting historical patterns."]}
+};
+</script>
+<script src="shared.js"></script>
+</body>
+</html>
