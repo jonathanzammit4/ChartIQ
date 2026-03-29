@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trend & Moving Averages — ChartIQ Learn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body><nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <span class="nlm">Chart<span>IQ</span></span>
+    <span class="nls">Learn</span>
+  </a>
+  <div class="nav-mid">
+    <a href="index.html" class="nl">Home</a>
+    <div class="nav-dd-wrap" id="navIndicators">
+      <a href="indicators.html" class="nl  has-dd">Indicators <span class="nl-arr">▾</span></a>
+      <div class="mega-dropdown" id="megaDropdown">
+        <div class="mega-inner">
+          <div class="mega-intro">
+            <p class="mega-intro-title">All indicators</p>
+            <p class="mega-intro-sub">6 categories covering every major tool used in technical analysis.</p>
+            <a href="indicators.html" class="mega-all-link">View all →</a>
+          </div>
+          <div class="mega-cats">
+            <a href="trend.html" class="mega-cat act"><span class="mc-icon">📈</span><div><strong>Trend &amp; Moving Averages</strong><span>SMA, EMA, Heikin Ashi, Gann</span></div></a>
+            <a href="momentum.html" class="mega-cat "><span class="mc-icon">⚡</span><div><strong>Momentum &amp; Oscillators</strong><span>RSI, MACD, Stochastic, Divergence</span></div></a>
+            <a href="volatility.html" class="mega-cat "><span class="mc-icon">🕯️</span><div><strong>Volatility &amp; Patterns</strong><span>Bollinger, Elliott Wave, Renko, Harmonic</span></div></a>
+            <a href="structure.html" class="mega-cat "><span class="mc-icon">🏗️</span><div><strong>Structure &amp; Levels</strong><span>S&amp;R, Supply/Demand, BOS, CHoCH</span></div></a>
+            <a href="priceaction.html" class="mega-cat "><span class="mc-icon">🎯</span><div><strong>Price Action &amp; Advanced</strong><span>Fibonacci, FVG, Breakout, Reversal</span></div></a>
+            <a href="volume.html" class="mega-cat "><span class="mc-icon">📊</span><div><strong>Volume &amp; Other Tools</strong><span>Volume, Moon Phases, Seasonality</span></div></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-r">
+    <div class="tt">
+      <button class="tb on" id="btnDark" onclick="setTheme('dark')" title="Dark">🌙</button>
+      <button class="tb" id="btnLight" onclick="setTheme('light')" title="Light">☀️</button>
+    </div>
+    <a href="index.html" class="nc">← Home</a>
+  </div>
+</nav>
+<div class="page-hero">
+  <div class="cat-accent" style="background:#00d4aa"></div>
+  <div class="page-hero-inner">
+    <a href="indicators.html" class="ph-back">← All indicators</a>
+    <span class="ptag" style="background:rgba(0,212,170,0.08);border-color:#00d4aa30;color:#00d4aa">Category 1 · 6 indicators</span>
+    <h1>📈 Trend & Moving Averages</h1>
+    <p>Tools that smooth price noise to reveal the underlying direction of a market. This is the foundation of all technical analysis — start here if you're new to trading.</p>
+  </div>
+</div>
+
+<div class="ind-grid" style="max-width:1172px;margin:0 auto">
+  <div class="ind-card reveal" onclick="openModal('sma')">
+    <div class="ind-card-bar" style="background:#00d4aa"></div>
+    <div class="ind-card-body">
+      <div class="ind-card-meta">
+        <span class="ind-type" style="background:rgba(0,212,170,.1);color:#00d4aa">Trend</span>
+        <span class="ind-diff">★☆☆ Easy</span>
+      </div>
+      <h3>SMA</h3>
+      <p class="ind-card-full">// Simple Moving Average</p>
+      <p class="ind-card-desc">Smooths price noise by averaging closing prices over N periods. The foundation of all trend-following strategies.</p>
+      <div class="ind-signals"><span class="isig isig-buy">BUY</span><span class="isig isig-sell">SELL</span><span class="isig isig-trend">TREND</span></div>
+    </div>
+    <div class="ind-card-cta"><span>Learn SMA</span><span class="ind-cta-arr">→</span></div>
+  </div>
+  <div class="ind-card reveal" onclick="openModal('ema')">
+    <div class="ind-card-bar" style="background:#00d4aa"></div>
+    <div class="ind-card-body">
+      <div class="ind-card-meta">
+        <span class="ind-type" style="background:rgba(0,212,170,.1);color:#00d4aa">Trend</span>
+        <span class="ind-diff">★★☆ Beginner</span>
+      </div>
+      <h3>EMA</h3>
+      <p class="ind-card-full">// Exponential Moving Average</p>
+      <p class="ind-card-desc">Like SMA but gives more weight to recent prices, making it react faster to new price movements and trend changes.</p>
+      <div class="ind-signals"><span class="isig isig-buy">BUY</span><span class="isig isig-sell">SELL</span><span class="isig isig-trend">TREND</span></div>
+    </div>
+    <div class="ind-card-cta"><span>Learn EMA</span><span class="ind-cta-arr">→</span></div>
+  </div>
+  <div class="ind-card reveal" onclick="openModal('trendlines')">
+    <div class="ind-card-bar" style="background:#00d4aa"></div>
+    <div class="ind-card-body">
+      <div class="ind-card-meta">
+        <span class="ind-type" style="background:rgba(0,212,170,.1);color:#00d4aa">Trend</span>
+        <span class="ind-diff">★☆☆ Easy</span>
+      </div>
+      <h3>Trend Lines</h3>
+      <p class="ind-card-full">// Diagonal Price Structure Lines</p>
+      <p class="ind-card-desc">Straight lines connecting price highs or lows to visualise the direction and angle of a trend.</p>
+      <div class="ind-signals"><span class="isig isig-buy">BUY</span><span class="isig isig-sell">SELL</span><span class="isig isig-trend">TREND</span></div>
+    </div>
+    <div class="ind-card-cta"><span>Learn Trend Lines</span><span class="ind-cta-arr">→</span></div>
+  </div>
+  <div class="ind-card reveal" onclick="openModal('dynsr')">
+    <div class="ind-card-bar" style="background:#00d4aa"></div>
+    <div class="ind-card-body">
+      <div class="ind-card-meta">
+        <span class="ind-type" style="background:rgba(0,212,170,.1);color:#00d4aa">Trend</span>
+        <span class="ind-diff">★★☆ Beginner</span>
+      </div>
+      <h3>Dynamic S&R</h3>
+      <p class="ind-card-full">// Dynamic Support & Resistance</p>
+      <p class="ind-card-desc">Moving support and resistance levels that shift with price over time — using moving averages as flexible floors and ceilings.</p>
+      <div class="ind-signals"><span class="isig isig-buy">BUY</span><span class="isig isig-sell">SELL</span><span class="isig isig-trend">TREND</span></div>
+    </div>
+    <div class="ind-card-cta"><span>Learn Dynamic S&R</span><span class="ind-cta-arr">→</span></div>
+  </div>
+  <div class="ind-card reveal" onclick="openModal('gann')">
+    <div class="ind-card-bar" style="background:#00d4aa"></div>
+    <div class="ind-card-body">
+      <div class="ind-card-meta">
+        <span class="ind-type" style="background:rgba(0,212,170,.1);color:#00d4aa">Trend</span>
+        <span class="ind-diff">★★★ Advanced</span>
+      </div>
+      <h3>Gann Angles</h3>
+      <p class="ind-card-full">// W.D. Gann Price-Time Analysis</p>
+      <p class="ind-card-desc">Price-time relationship angles developed by W.D. Gann in the early 1900s — the 1×1 (45°) is the most significant.</p>
+      <div class="ind-signals"><span class="isig isig-buy">BUY</span><span class="isig isig-sell">SELL</span><span class="isig isig-trend">TREND</span></div>
+    </div>
+    <div class="ind-card-cta"><span>Learn Gann Angles</span><span class="ind-cta-arr">→</span></div>
+  </div>
+  <div class="ind-card reveal" onclick="openModal('heikinashi')">
+    <div class="ind-card-bar" style="background:#00d4aa"></div>
+    <div class="ind-card-body">
+      <div class="ind-card-meta">
+        <span class="ind-type" style="background:rgba(0,212,170,.1);color:#00d4aa">Trend</span>
+        <span class="ind-diff">★★☆ Beginner</span>
+      </div>
+      <h3>Heikin Ashi</h3>
+      <p class="ind-card-full">// Smoothed Averaging Candlesticks</p>
+      <p class="ind-card-desc">Modified candlestick charts that average price data to create smoother candles, making trends far easier to read.</p>
+      <div class="ind-signals"><span class="isig isig-buy">BUY</span><span class="isig isig-sell">SELL</span><span class="isig isig-trend">TREND</span></div>
+    </div>
+    <div class="ind-card-cta"><span>Learn Heikin Ashi</span><span class="ind-cta-arr">→</span></div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="overlay" id="overlay" onclick="handleOvClick(event)">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="modal-head-bar" id="mHeadBar"></div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <span class="m-tag" id="mTag"></span>
+      <h2 id="mTitle"></h2>
+      <p class="m-full" id="mFull"></p>
+      <p class="m-intro" id="mIntro"></p>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<footer>
+  <span class="fb">ChartIQ Learn</span>
+  <span class="fn">⚠ Educational only — not financial advice</span>
+  <span class="fc">© 2025</span>
+</footer>
+
+<script>
+window.INDICATORS = {
+  'sma': {"title": "SMA", "full": "// Simple Moving Average", "tag": "Trend · Easy", "tagBg": "rgba(0,212,170,.1)", "tagColor": "#00d4aa", "accentColor": "#00d4aa", "_chartType": "default", "intro": "The Simple Moving Average is the most fundamental tool in technical analysis. It smooths price data to reveal the underlying trend by averaging closing prices over a set period.", "how": "SMA adds up the last N closing prices and divides by N. Each new candle, the oldest drops off and the newest adds in — creating a smooth line that follows price.\n\nA rising SMA = uptrend. Falling SMA = downtrend. The famous \"Golden Cross\" (fast SMA crossing above slow SMA) and \"Death Cross\" (fast SMA crossing below) are among the most-watched signals in all of trading.", "formula": "SMA(N) = (P₁ + P₂ + ... + Pₙ) / N\nCommon periods: 10, 20, 50, 100, 200\nGolden Cross: SMA(50) crosses above SMA(200)\nDeath Cross: SMA(50) crosses below SMA(200)", "signals": [{"t": "buy", "l": "Golden Cross", "d": "Fast SMA (50) crosses above slow SMA (200). One of the strongest long-term buy signals — watched by institutions worldwide."}, {"t": "sell", "l": "Death Cross", "d": "Fast SMA crosses below slow SMA. Signals a potential bear market. A reliable longer-term sell signal."}, {"t": "trend", "l": "Price vs SMA", "d": "Price above rising SMA = bullish. Price below falling SMA = bearish. The SMA itself acts as dynamic support/resistance."}], "tips": ["The 200-day SMA is the single most watched level by institutional investors. Price above = bull territory, below = bear territory.", "SMA lags price — it confirms trends but is slow at signalling reversals. Use it for direction, not timing.", "Price frequently bounces off the SMA in trending markets — the moving average acts as a magnet for price."]},
+  'ema': {"title": "EMA", "full": "// Exponential Moving Average", "tag": "Trend · Easy", "tagBg": "rgba(0,212,170,.1)", "tagColor": "#00d4aa", "accentColor": "#00d4aa", "_chartType": "ema", "intro": "The EMA works like the SMA but with a crucial difference: it gives exponentially more weight to recent prices. This makes it react faster to new price movements — especially valuable in fast-moving markets like crypto.", "how": "EMA applies a multiplier (2 ÷ N+1) so recent prices influence the average more than older ones. A 10-period EMA reacts faster than a 10-period SMA.\n\nThis responsiveness makes EMA excellent for identifying trend changes early — but it also generates more false signals in choppy sideways markets.", "formula": "Multiplier k = 2 / (N + 1)\nEMA = Price × k + Previous EMA × (1 − k)\nFor EMA(10): k = 2/11 ≈ 0.1818\nPopular: EMA(9), EMA(21), EMA(50), EMA(200)", "signals": [{"t": "buy", "l": "Price above EMA", "d": "Price crosses above a rising EMA — trend turning bullish. Stronger when confirmed by increasing volume."}, {"t": "sell", "l": "Price below EMA", "d": "Price crosses below a falling EMA — trend turning bearish. Consider tightening stop-losses or exiting longs."}, {"t": "trend", "l": "EMA slope", "d": "Rising EMA = uptrend. Flat = sideways (avoid trend strategies). Falling = downtrend. Use slope as your primary filter."}], "tips": ["The 9 and 21 EMA cross is popular for short-term crypto trading. The 50 and 200 EMA cross is used for longer-term signals.", "EMA generates more false signals than SMA in ranging markets. Only use EMA strategies in clearly trending conditions.", "Many traders buy \"dips to the EMA\" in established uptrends — the EMA acts as dynamic support."]},
+  'trendlines': {"title": "Trend Lines", "full": "// Diagonal Price Structure Lines", "tag": "Trend · Easy", "tagBg": "rgba(0,212,170,.1)", "tagColor": "#00d4aa", "accentColor": "#00d4aa", "_chartType": "default", "intro": "Trend lines are straight lines drawn along price highs or lows to visualise the direction and angle of a trend. They are one of the most basic and visually intuitive tools in technical analysis.", "how": "An uptrend line connects successive higher lows. A downtrend line connects successive lower highs. The line defines the trend's \"floor\" (uptrend) or \"ceiling\" (downtrend).\n\nA valid trend line needs at least two touch points — three or more makes it significantly more important. When price breaks through a trend line with strong volume, it often signals a trend change.", "formula": "Uptrend line: connect higher swing lows\nDowntrend line: connect lower swing highs\nMinimum: 2 touch points to draw\nStrong: 3+ touch points (more significant)", "signals": [{"t": "buy", "l": "Uptrend line bounce", "d": "Price pulls back to the uptrend line and resumes higher. Classic entry point in an established uptrend."}, {"t": "sell", "l": "Downtrend line reject", "d": "Price rallies to the downtrend line and falls again. Classic short entry or exit point in a downtrend."}, {"t": "trend", "l": "Trend line break", "d": "Price breaks through the trend line with volume. The trend may be ending — prepare for a potential reversal or structure shift."}], "tips": ["Trend lines are subjective — two traders often draw them slightly differently. The concept matters more than perfection.", "A broken trend line often becomes the opposite role: a broken uptrend line becomes resistance, and vice versa.", "Very steep trend line angles are unsustainable — they break frequently. Shallower angles tend to hold longer."]},
+  'dynsr': {"title": "Dynamic S&R", "full": "// Dynamic Support & Resistance", "tag": "Trend · Beginner", "tagBg": "rgba(0,212,170,.1)", "tagColor": "#00d4aa", "accentColor": "#00d4aa", "_chartType": "ema", "intro": "Unlike fixed horizontal levels, dynamic support and resistance moves with price over time — primarily using moving averages (especially EMAs) as flexible floors and ceilings that adapt to the current trend.", "how": "Moving averages (especially EMAs) act as dynamic support in uptrends and dynamic resistance in downtrends. Price frequently bounces off these levels.\n\nThe key insight: in a strong uptrend, every pullback toward the EMA is a buying opportunity. In a downtrend, every rally toward the EMA is a selling opportunity.", "formula": "Dynamic Support = EMA(20) or EMA(50) in uptrend\nDynamic Resistance = EMA(20) or EMA(50) in downtrend\nLevel flip: broken support often becomes resistance\nConfirmation: look for reversal candle at the level", "signals": [{"t": "buy", "l": "EMA support bounce", "d": "Price pulls back to EMA in an uptrend and bounces. Look for a bullish candlestick pattern for extra confirmation."}, {"t": "sell", "l": "EMA resistance reject", "d": "Price rallies to EMA in a downtrend and reverses. Look for a bearish candlestick for confirmation."}, {"t": "trend", "l": "Level role reversal", "d": "When price breaks through dynamic support, it often becomes dynamic resistance — and vice versa."}], "tips": ["In trending markets, the 20 or 21 EMA is the most commonly used dynamic S&R level by retail traders.", "Always trade in the direction of the trend — only buy bounces in uptrends, only sell rejections in downtrends.", "The first time price tests a dynamic level after it forms is usually the strongest bounce opportunity."]},
+  'gann': {"title": "Gann Angles", "full": "// W.D. Gann Price-Time Analysis", "tag": "Trend · Advanced", "tagBg": "rgba(0,212,170,.1)", "tagColor": "#00d4aa", "accentColor": "#00d4aa", "_chartType": "default", "intro": "Developed by W.D. Gann in the early 1900s, Gann Angles combine price and time into a unified system. The most important angle is the 1×1 — one unit of price per one unit of time (45 degrees).", "how": "Gann believed that the balance between price and time was the key to understanding market direction. Angles radiate from major swing highs and lows at specific ratios: 1×1, 2×1, 1×2, etc.\n\nThe 1×1 (45°) is the most important. Price above this angle = bullish. Below = bearish. The angles act as dynamic support and resistance — when price breaks one angle, it tends to travel to the next.", "formula": "1×1 angle: 1 unit price per 1 unit time (45°)\n2×1 angle: 2 units price per 1 unit time (steeper)\n1×2 angle: 1 unit price per 2 units time (shallower)\nFan from: major swing highs and lows", "signals": [{"t": "buy", "l": "Above 1×1 angle", "d": "Price holding above the 1×1 Gann angle from a major low. Trend is considered healthy and bullish."}, {"t": "sell", "l": "Below 1×1 angle", "d": "Price breaks below the 1×1 angle. Suggests weakening trend — next angle down becomes the target."}, {"t": "trend", "l": "Angle-to-angle travel", "d": "When price breaks one Gann angle, it tends to travel to the next one. Used to set price targets."}], "tips": ["Gann analysis is highly subjective — starting points and chart scale dramatically affect the angles. Requires practice.", "Gann methods are controversial in modern trading. Many traders find value in the concepts but not the strict application.", "Best used as a complementary tool alongside conventional indicators rather than a standalone system."]},
+  'heikinashi': {"title": "Heikin Ashi", "full": "// Smoothed Averaging Candlesticks", "tag": "Trend · Beginner", "tagBg": "rgba(0,212,170,.1)", "tagColor": "#00d4aa", "accentColor": "#00d4aa", "_chartType": "default", "intro": "Heikin Ashi (Japanese for \"average bar\") is a modified candlestick chart that averages price data to create smoother candles, making trends and reversals much cleaner and easier to identify.", "how": "Each Heikin Ashi candle is calculated using averages of the current and previous candle's data. This smoothing means trends appear as consecutive green or red candles without interruption — perfect for trend-following.\n\nThe trade-off: Heikin Ashi candles don't show real price. Don't use them for exact entry/exit price levels or stop-loss calculations.", "formula": "HA Close = (Open + High + Low + Close) / 4\nHA Open = (Previous HA Open + Previous HA Close) / 2\nHA High = Max(High, HA Open, HA Close)\nHA Low = Min(Low, HA Open, HA Close)", "signals": [{"t": "buy", "l": "Green, no lower wick", "d": "Strong uptrend. Solid green Heikin Ashi candles with no lower wicks = strong bullish momentum. Hold long positions."}, {"t": "sell", "l": "Red, no upper wick", "d": "Strong downtrend. Solid red candles with no upper wicks = strong bearish momentum. Hold short or stay out."}, {"t": "trend", "l": "Doji-shaped candle", "d": "Small body with wicks on both sides = trend is pausing or changing direction. Wait for next candle before acting."}], "tips": ["Use Heikin Ashi for trend direction, then switch to regular candlestick charts for precise entry/exit timing.", "Heikin Ashi excels at keeping you in a trade — the smoothing helps you hold through small retracements.", "Never use Heikin Ashi prices for stop-loss calculations — always reference real price candlestick levels."]}
+};
+</script>
+<script src="shared.js"></script>
+</body>
+</html>
