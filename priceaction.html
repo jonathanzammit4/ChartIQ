@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Price Action & Advanced — ChartIQ Learn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body><nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <span class="nlm">Chart<span>IQ</span></span>
+    <span class="nls">Learn</span>
+  </a>
+  <div class="nav-mid">
+    <a href="index.html" class="nl">Home</a>
+    <div class="nav-dd-wrap" id="navIndicators">
+      <a href="indicators.html" class="nl  has-dd">Indicators <span class="nl-arr">▾</span></a>
+      <div class="mega-dropdown" id="megaDropdown">
+        <div class="mega-inner">
+          <div class="mega-intro">
+            <p class="mega-intro-title">All indicators</p>
+            <p class="mega-intro-sub">6 categories covering every major tool used in technical analysis.</p>
+            <a href="indicators.html" class="mega-all-link">View all →</a>
+          </div>
+          <div class="mega-cats">
+            <a href="trend.html" class="mega-cat "><span class="mc-icon">📈</span><div><strong>Trend &amp; Moving Averages</strong><span>SMA, EMA, Heikin Ashi, Gann</span></div></a>
+            <a href="momentum.html" class="mega-cat "><span class="mc-icon">⚡</span><div><strong>Momentum &amp; Oscillators</strong><span>RSI, MACD, Stochastic, Divergence</span></div></a>
+            <a href="volatility.html" class="mega-cat "><span class="mc-icon">🕯️</span><div><strong>Volatility &amp; Patterns</strong><span>Bollinger, Elliott Wave, Renko, Harmonic</span></div></a>
+            <a href="structure.html" class="mega-cat "><span class="mc-icon">🏗️</span><div><strong>Structure &amp; Levels</strong><span>S&amp;R, Supply/Demand, BOS, CHoCH</span></div></a>
+            <a href="priceaction.html" class="mega-cat act"><span class="mc-icon">🎯</span><div><strong>Price Action &amp; Advanced</strong><span>Fibonacci, FVG, Breakout, Reversal</span></div></a>
+            <a href="volume.html" class="mega-cat "><span class="mc-icon">📊</span><div><strong>Volume &amp; Other Tools</strong><span>Volume, Moon Phases, Seasonality</span></div></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-r">
+    <div class="tt">
+      <button class="tb on" id="btnDark" onclick="setTheme('dark')" title="Dark">🌙</button>
+      <button class="tb" id="btnLight" onclick="setTheme('light')" title="Light">☀️</button>
+    </div>
+    <a href="index.html" class="nc">← Home</a>
+  </div>
+</nav>
+<div class="page-hero">
+  <div class="cat-accent" style="background:#e05252"></div>
+  <div class="page-hero-inner">
+    <a href="indicators.html" class="ph-back">← All indicators</a>
+    <span class="ptag" style="background:rgba(224,82,82,0.08);border-color:#e0525230;color:#e05252">Category 5 · 4 indicators</span>
+    <h1>🎯 Price Action & Advanced</h1>
+    <p>Pure price-based techniques and advanced concepts used by professional and institutional traders worldwide. More complex — best approached after mastering the basics.</p>
+  </div>
+</div>
+
+<div class="ind-grid" style="max-width:1172px;margin:0 auto">
+  <div class="ind-card reveal" onclick="openModal('fib')">
+    <div class="ind-card-bar" style="background:#e05252"></div>
+    <div class="ind-card-body">
+      <div class="ind-card-meta">
+        <span class="ind-type" style="background:rgba(224,82,82,.12);color:#e05252">Price Action</span>
+        <span class="ind-diff">★★☆ Intermediate</span>
+      </div>
+      <h3>Fibonacci</h3>
+      <p class="ind-card-full">// Fibonacci Retracement & Extension</p>
+      <p class="ind-card-desc">Key mathematical ratios (23.6%, 38.2%, 61.8%) drawn on price swings to identify high-probability support and resistance zones.</p>
+      <div class="ind-signals"><span class="isig isig-buy">BUY</span><span class="isig isig-sell">SELL</span><span class="isig isig-trend">TREND</span></div>
+    </div>
+    <div class="ind-card-cta"><span>Learn Fibonacci</span><span class="ind-cta-arr">→</span></div>
+  </div>
+  <div class="ind-card reveal" onclick="openModal('fvg')">
+    <div class="ind-card-bar" style="background:#e05252"></div>
+    <div class="ind-card-body">
+      <div class="ind-card-meta">
+        <span class="ind-type" style="background:rgba(224,82,82,.12);color:#e05252">Price Action</span>
+        <span class="ind-diff">★★★ Intermediate</span>
+      </div>
+      <h3>Fair Value Gap</h3>
+      <p class="ind-card-full">// Price Imbalance / Market Gap</p>
+      <p class="ind-card-desc">A three-candle price imbalance where the middle candle moves so fast a gap is left — areas where price may return to "fill".</p>
+      <div class="ind-signals"><span class="isig isig-buy">BUY</span><span class="isig isig-sell">SELL</span><span class="isig isig-trend">TREND</span></div>
+    </div>
+    <div class="ind-card-cta"><span>Learn Fair Value Gap</span><span class="ind-cta-arr">→</span></div>
+  </div>
+  <div class="ind-card reveal" onclick="openModal('breakout')">
+    <div class="ind-card-bar" style="background:#e05252"></div>
+    <div class="ind-card-body">
+      <div class="ind-card-meta">
+        <span class="ind-type" style="background:rgba(224,82,82,.12);color:#e05252">Price Action</span>
+        <span class="ind-diff">★★☆ Intermediate</span>
+      </div>
+      <h3>Breakout Trading</h3>
+      <p class="ind-card-full">// Range and Pattern Breakouts</p>
+      <p class="ind-card-desc">Entering when price moves outside a defined range or pattern with increased volume — signalling the start of a new directional move.</p>
+      <div class="ind-signals"><span class="isig isig-buy">BUY</span><span class="isig isig-sell">SELL</span><span class="isig isig-hold">HOLD</span></div>
+    </div>
+    <div class="ind-card-cta"><span>Learn Breakout Trading</span><span class="ind-cta-arr">→</span></div>
+  </div>
+  <div class="ind-card reveal" onclick="openModal('reversal')">
+    <div class="ind-card-bar" style="background:#e05252"></div>
+    <div class="ind-card-body">
+      <div class="ind-card-meta">
+        <span class="ind-type" style="background:rgba(224,82,82,.12);color:#e05252">Price Action</span>
+        <span class="ind-diff">★★☆ Intermediate</span>
+      </div>
+      <h3>Reversal Patterns</h3>
+      <p class="ind-card-full">// Head & Shoulders, Double Tops/Bottoms</p>
+      <p class="ind-card-desc">Chart formations that historically signal a trend is ending — Head & Shoulders, Double Top/Bottom, and Wedges.</p>
+      <div class="ind-signals"><span class="isig isig-buy">BUY</span><span class="isig isig-sell">SELL</span><span class="isig isig-trend">TREND</span></div>
+    </div>
+    <div class="ind-card-cta"><span>Learn Reversal Patterns</span><span class="ind-cta-arr">→</span></div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="overlay" id="overlay" onclick="handleOvClick(event)">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="modal-head-bar" id="mHeadBar"></div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <span class="m-tag" id="mTag"></span>
+      <h2 id="mTitle"></h2>
+      <p class="m-full" id="mFull"></p>
+      <p class="m-intro" id="mIntro"></p>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<footer>
+  <span class="fb">ChartIQ Learn</span>
+  <span class="fn">⚠ Educational only — not financial advice</span>
+  <span class="fc">© 2025</span>
+</footer>
+
+<script>
+window.INDICATORS = {
+  'fib': {"title": "Fibonacci", "full": "// Fibonacci Retracement & Extension", "tag": "Price Action · Intermediate", "tagBg": "rgba(224,82,82,.12)", "tagColor": "#e05252", "accentColor": "#e05252", "_chartType": "default", "intro": "Fibonacci retracement uses mathematical ratios from the Fibonacci sequence to identify potential support/resistance levels during price pullbacks. The 61.8% level — the \"golden ratio\" — is considered the most significant.", "how": "After a significant price move, draw Fibonacci levels from the swing low to swing high (in an uptrend). Key retracement levels are 23.6%, 38.2%, 50%, 61.8%, and 78.6%.\n\nThe golden ratio (61.8%) is the most watched — a pullback that holds this level shows strong trend conviction. These levels work because so many traders watch and act on them, creating self-fulfilling support and resistance.", "formula": "Key retracements: 23.6% | 38.2% | 50% | 61.8% | 78.6%\nExtension targets: 127.2% | 161.8% | 261.8%\nGolden ratio: 61.8% (derived from 1/1.618)\nDraw from: swing low to swing high (uptrend)", "signals": [{"t": "buy", "l": "61.8% retracement", "d": "Price pulls back to the 61.8% level in an uptrend. High-probability bounce zone — look for bullish candle confirmation."}, {"t": "sell", "l": "61.8% in downtrend", "d": "In a downtrend, a rally to the 61.8% retracement level is a high-probability short entry zone."}, {"t": "trend", "l": "Extension targets", "d": "Use Fibonacci extensions (127.2%, 161.8%) after a breakout to set realistic profit targets for the next impulse move."}], "tips": ["Confluence is key: a Fibonacci level that also coincides with horizontal S&R, an EMA, or a supply/demand zone is much more powerful.", "The 50% level is not mathematically a Fibonacci number, but it's widely watched psychologically — expect price to pause there.", "Fibonacci works largely because of collective belief — so many traders use these levels that they become self-fulfilling."]},
+  'fvg': {"title": "Fair Value Gap", "full": "// Price Imbalance / Market Gap", "tag": "Price Action · Intermediate", "tagBg": "rgba(224,82,82,.12)", "tagColor": "#e05252", "accentColor": "#e05252", "_chartType": "default", "intro": "A Fair Value Gap (FVG) is a three-candle price imbalance where the middle candle moves so fast that a gap is left between the wicks of the first and third candles — representing inefficient trading.", "how": "A bullish FVG: the high of candle 1 doesn't touch the low of candle 3 — price moved up so quickly that no real two-sided trading occurred. Institutional algorithms often return price to these gaps.\n\nThis concept comes from Smart Money Concepts (SMC) — the idea that institutional traders create these imbalances and price tends to return to fill them before continuing in the original direction.", "formula": "Bullish FVG: Low(Candle 3) > High(Candle 1)\nBearish FVG: High(Candle 3) < Low(Candle 1)\nFill: price returns to the gap area\nPartial fill: 50% of gap is the key equilibrium level", "signals": [{"t": "buy", "l": "Bullish FVG fill", "d": "Price returns to fill a bullish FVG (from below). The gap acts as support. Enter long as price enters the FVG."}, {"t": "sell", "l": "Bearish FVG fill", "d": "Price returns to fill a bearish FVG (from above). The gap acts as resistance. Enter short as price enters the FVG."}, {"t": "trend", "l": "FVG + trend direction", "d": "Only trade FVGs that align with the overall trend. With-trend FVGs have much higher success rates than counter-trend."}], "tips": ["FVGs are a newer concept from Smart Money Concepts. Their effectiveness is debated — treat them as one tool among many.", "The middle 50% of an FVG (the equilibrium) is often the strongest magnet for price to return to.", "Not all FVGs get filled. High-momentum moves may leave gaps that are never revisited — use confluence for higher probability."]},
+  'breakout': {"title": "Breakout Trading", "full": "// Range and Pattern Breakouts", "tag": "Price Action · Intermediate", "tagBg": "rgba(224,82,82,.12)", "tagColor": "#e05252", "accentColor": "#e05252", "_chartType": "default", "intro": "Breakout trading involves entering when price moves outside a defined range, chart pattern, or consolidation area with increased volume — signalling the start of a new directional move.", "how": "Price spends most of its time in consolidation. When it breaks out, the move can be explosive because stop orders trigger and new momentum traders pile in.\n\nValid breakouts require: (1) a close outside the level (wicks alone don't count), (2) increased volume on the breakout candle, (3) a retest of the broken level that holds. False breakouts are extremely common — this is why volume confirmation is essential.", "formula": "Breakout entry: after close above resistance (or below support)\nStop placement: below the breakout level\nTarget: measure the range height, project from breakout\nFalse breakout: price returns inside within 1-3 candles", "signals": [{"t": "buy", "l": "Bullish breakout", "d": "Price closes above a key resistance level or chart pattern (triangle, flag) with strong volume. Enter on close or on successful retest."}, {"t": "sell", "l": "Bearish breakout", "d": "Price closes below a key support level with strong volume. Enter on close or on the retest of broken support as new resistance."}, {"t": "hold", "l": "False breakout", "d": "Price breaks out then immediately returns inside the range. Wait — this \"fakeout\" often leads to a sharp move in the opposite direction."}], "tips": ["Volume is the #1 confirmation for breakouts. A breakout with declining volume has a high chance of being false.", "The retest after a breakout is often the best entry — you miss the initial move but get much better confirmation.", "Consolidation patterns (flags, triangles, rectangles) are the most reliable setups for breakout trading."]},
+  'reversal': {"title": "Reversal Patterns", "full": "// Head & Shoulders, Double Tops/Bottoms", "tag": "Price Action · Intermediate", "tagBg": "rgba(224,82,82,.12)", "tagColor": "#e05252", "accentColor": "#e05252", "_chartType": "default", "intro": "Reversal chart patterns are formations in price action that signal a trend is ending and may reverse. The most reliable include Head & Shoulders, Double Top/Bottom, and Wedges.", "how": "Head & Shoulders: three peaks — left shoulder, higher head, right shoulder — with a \"neckline\" below. When price breaks the neckline, the uptrend is likely ending.\n\nDouble Top: two roughly equal highs — price fails to break out twice, then drops. Double Bottom: two equal lows — price fails to break down twice, then rises. These patterns are significant because they take time to form.", "formula": "H&S target: neckline − (head height − neckline)\nDouble Top target: neckline − (top − neckline)\nDouble Bottom target: neckline + (neckline − bottom)\nConfirmation: ALWAYS wait for neckline break with volume", "signals": [{"t": "sell", "l": "Head & Shoulders", "d": "Right shoulder forms, price breaks the neckline with volume. Short entry at neckline break or retest. Target = pattern height."}, {"t": "buy", "l": "Inverse H&S", "d": "Upside-down H&S after a downtrend. Neckline break with volume = buy signal. One of the most reliable bullish reversal patterns."}, {"t": "buy", "l": "Double Bottom", "d": "Two equal lows — second low fails to go lower. Price breaks the middle peak (neckline). Strong bullish reversal signal."}], "tips": ["Never trade a reversal pattern until the neckline breaks — many patterns fail before completion. Patience is essential.", "Volume should increase on the neckline break and decrease during the right shoulder/second top formation.", "The target measurement (pattern height projected from neckline) is a minimum target, not a guaranteed outcome."]}
+};
+</script>
+<script src="shared.js"></script>
+</body>
+</html>
